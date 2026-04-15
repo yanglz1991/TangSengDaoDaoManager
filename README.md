@@ -1,8 +1,8 @@
-# 唐僧叨叨后台管理
+# QX后台管理
 
 ### 介绍 📖
 
-唐僧叨叨后台管理一款基于 Vue3.3、TypeScript、Vite5、Pinia、Element-Plus 开源的后台管理框架，使用目前最新技术栈开发；是唐僧叨叨业务管理后台。
+QX后台管理一款基于 Vue3.3、TypeScript、Vite5、Pinia、Element-Plus 的后台管理框架，使用目前最新技术栈开发；是QX业务管理后台。
 
 - 使用 Vue3.3 + TypeScript 开发，单文件组件＜script setup＞
 - 采用 Vite 作为项目开发、打包工具（配置 gzip/brotli 打包、tsx 语法、跨域代理…）
@@ -89,48 +89,3 @@ pnpm serve
 - [x] 设置
   - [x] 通用设置
   - [x] 修改登录密码
-### 功能截图 📷
-
-
-- 首页
-
-![home](./docs/home/home.png)
-
-![theme](./docs/home/theme.png)
-![theme](./docs/home/dark.png)
-
-- 用户
-
-![adduser](./docs/user/adduser.png)
-
-![userlist](./docs/user/userlist.png)
-
-![userlist](./docs/user/disablelist.png)
-
-- 群组
-
-![grouplist](./docs/group/grouplist.png)
-
-![groupdisablelist](./docs/group/groupdisablelist.png)
-
-- 消息
-
-![sendmsglist](./docs/message/sendmsglist.png)
-
-![prohibitwords](./docs/message/prohibitwords.png)
-
-- 举报
-
-![report-user](./docs/report/user.png)
-
-![report-group](./docs/report/group.png)
-
-- 工具
-
-![appupdate](./docs/tool/appupdate.png)
-
-- 设置
-
-![currencysetting](./docs/setting/currencysetting.png)
-
-![currencysetting](./docs/setting/updatepwd.png)
