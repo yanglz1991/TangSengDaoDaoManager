@@ -28,7 +28,7 @@
                   <el-radio :label="0">关闭</el-radio>
                 </el-radio-group>
               </el-form-item>
-              <el-form-item label="系统账号加入群聊：">
+              <!-- <el-form-item label="系统账号加入群聊：">
                 <el-radio-group v-model="formData.invite_system_account_join_group_on">
                   <el-radio :label="1">开启</el-radio>
                   <el-radio :label="0">关闭</el-radio>
@@ -39,7 +39,7 @@
                   <el-radio :label="1">加入</el-radio>
                   <el-radio :label="0">不加入</el-radio>
                 </el-radio-group>
-              </el-form-item>
+              </el-form-item> -->
               <el-form-item label="新用户需完善资料：">
                 <el-radio-group v-model="formData.register_user_must_complete_info_on">
                   <el-radio :label="1">是</el-radio>
@@ -97,7 +97,7 @@ import { ElMessage } from 'element-plus';
 import { getAppconfigGet, updateAppconfigPost } from '@/api/setting';
 // 表单
 const formData = reactive({
-  welcome_message: '欢迎你来到悟空聊天。',
+  welcome_message: '欢迎你来到QX',
   revoke_second: 60,
   new_user_join_system_group: 1,
   search_by_phone: 1,

@@ -188,14 +188,14 @@ const column = reactive<Column.ColumnOptions[]>([
               dropdown: () => {
                 return (
                   <ElDropdownMenu>
-                    <ElDropdownItem onClick={() => onFriends(scope.row)}>
+                    {/* <ElDropdownItem onClick={() => onFriends(scope.row)}>
                       <i-bd-every-user class={'mr-4px'} />
                       好友列表
-                    </ElDropdownItem>
-                    <ElDropdownItem onClick={() => onUseBlackList(scope.row)}>
+                    </ElDropdownItem> */}
+                    {/* <ElDropdownItem onClick={() => onUseBlackList(scope.row)}>
                       <i-bd-personal-privacy class={'mr-4px'} />
                       黑名单列表
-                    </ElDropdownItem>
+                    </ElDropdownItem> */}
                     <ElDropdownItem onClick={() => onUseLiftban(scope.row)}>
                       <i-bd-info class={'mr-4px'} />
                       {scope.row.status === 1 ? '封禁' : '解禁'}

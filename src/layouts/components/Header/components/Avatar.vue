@@ -2,9 +2,9 @@
   <el-dropdown trigger="click" placement="bottom-end">
     <div class="flex items-center cursor-pointer">
       <span class="username">{{ username }}</span>
-      <div class="avatar">
+      <!-- <div class="avatar">
         <img v-if="userStore.userInfo.uid" :src="headerUrl" alt="avatar" />
-      </div>
+      </div> -->
     </div>
 
     <template #dropdown>

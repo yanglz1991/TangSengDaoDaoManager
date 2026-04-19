@@ -153,10 +153,10 @@ const column = reactive<Column.ColumnOptions[]>([
                       <i-bd-every-user class={'mr-4px'} />
                       群成员
                     </ElDropdownItem>
-                    <ElDropdownItem onClick={() => onRcord(scope.row)}>
+                    {/* <ElDropdownItem onClick={() => onRcord(scope.row)}>
                       <i-bd-log class={'mr-4px'} />
                       聊天记录
-                    </ElDropdownItem>
+                    </ElDropdownItem> */}
                     <ElDropdownItem onClick={() => onBlackList(scope.row)}>
                       <i-bd-people-unknown class={'mr-4px'} />
                       黑名单成员

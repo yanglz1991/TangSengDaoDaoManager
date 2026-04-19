@@ -1,4 +1,4 @@
 export default {
   APP_ENV: 'dev',
-  APP_URL: 'http://qx.qhfhasina.com/v1/'
+  APP_URL: 'http://qx.qhfhasina.com:83/api/v1/'
 };
