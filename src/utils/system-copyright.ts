@@ -6,7 +6,6 @@ if (import.meta.env.PROD) {
     '%c由%cQX%c驱动',
     copyright_sub_style,
     copyright_main_style,
-    copyright_sub_style,
-    '\nhttps://tangsengdaodao.com/'
+    copyright_sub_style
   );
 }

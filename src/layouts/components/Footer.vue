@@ -1,6 +1,6 @@
 <template>
   <div class="footer flex-center">
-    <a href="https://github.com" target="_blank"> 2023 © QX. </a>
+    <a  target="_blank"> 2026 © QX. </a>
   </div>
 </template>
 
