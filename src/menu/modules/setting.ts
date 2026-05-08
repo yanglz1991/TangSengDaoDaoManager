@@ -40,6 +40,21 @@ const home: Menu.MenuOptions = {
         isLink: '',
         title: '修改登录密码'
       }
+    },
+    {
+      component: '/setting/securechannel',
+      name: 'settingSecureChannel',
+      path: '/setting/securechannel',
+      meta: {
+        icon: 'i-bd-lock',
+        isAffix: false,
+        isFull: false,
+        isHide: false,
+        isKeepAlive: true,
+        isLink: '',
+        auth: ['superAdmin'],
+        title: '加密通道管理'
+      }
     }
   ]
 };

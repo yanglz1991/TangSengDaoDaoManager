@@ -26,3 +26,20 @@ export function updateAppconfigPost(data: any) {
     data
   });
 }
+
+// 获取加密通道配置
+export function getSecureChannelGet() {
+  return request({
+    url: '/manager/common/secure_channel',
+    method: 'get'
+  });
+}
+
+// 更新加密通道配置
+export function updateSecureChannelPut(data: any) {
+  return request({
+    url: '/manager/common/secure_channel',
+    method: 'put',
+    data
+  });
+}
