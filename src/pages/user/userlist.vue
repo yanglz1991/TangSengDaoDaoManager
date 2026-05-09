@@ -10,7 +10,12 @@
         <div class="flex items-center h-50px">
           <el-form inline>
             <el-form-item class="mb-0 !mr-16px">
-              <el-input v-model="queryFrom.keyword" placeholder="uid/手机号/用户名" clearable />
+              <el-input
+                v-model="queryFrom.keyword"
+                placeholder="uid/手机号/用户名/IP/设备"
+                clearable
+                style="width: 240px"
+              />
             </el-form-item>
             <el-form-item class="mb-0 !mr-0">
               <el-button type="primary" @click="getUserList">查询</el-button>
@@ -155,6 +160,11 @@ const column = reactive<Column.ColumnOptions[]>([
   {
     prop: 'device_model',
     label: '登录设备型号',
+    width: 140
+  },
+  {
+    prop: 'last_login_ip',
+    label: '登录IP',
     width: 140
   },
   {
