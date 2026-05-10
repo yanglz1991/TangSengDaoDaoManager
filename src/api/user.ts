@@ -53,6 +53,24 @@ export function userLiftbanPut(params: any) {
   });
 }
 
+// 重置/修改指定用户密码（超管）
+export function userResetPasswordPost(data: { uid: string; new_password: string; new_password_confirmation: string }) {
+  return request({
+    url: '/manager/user/resetpassword',
+    method: 'post',
+    data
+  });
+}
+
+// 修改指定用户昵称（超管）
+export function userUpdateNamePost(data: { uid: string; name: string }) {
+  return request({
+    url: '/manager/user/updatename',
+    method: 'post',
+    data
+  });
+}
+
 // 管理员-列表
 export function adminList() {
   return request({

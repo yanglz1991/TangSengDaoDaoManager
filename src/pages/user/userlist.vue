@@ -63,6 +63,14 @@
     <bd-send-msg v-model:value="sendValue" v-bind="sendInfo" />
     <!-- 查看设备 -->
     <Devices v-model:value="devicesValue" :uid="devicesUid" />
+    <!-- 修改账号密码 -->
+    <EditPassword
+      v-model:value="editPwdValue"
+      :uid="editPwdUser.uid"
+      :username="editPwdUser.username"
+      :name="editPwdUser.name"
+      @ok="getUserList"
+    />
   </bd-page>
 </template>
 
@@ -76,6 +84,7 @@ meta:
 import { useRouter } from 'vue-router';
 import { ElButton, ElSpace, ElAvatar, ElDropdown, ElDropdownMenu, ElDropdownItem, ElMessage, ElMessageBox } from 'element-plus';
 import Devices from '@/pages/message/components/Devices.vue';
+import EditPassword from '@/pages/user/components/EditPassword.vue';
 import { useUserStore } from '@/stores/modules/user';
 import { BU_DOU_CONFIG } from '@/config';
 // API 接口
@@ -214,6 +223,10 @@ const column = reactive<Column.ColumnOptions[]>([
                       <i-bd-devices class={'mr-4px'} />
                       查看设备
                     </ElDropdownItem>
+                    <ElDropdownItem onClick={() => onEditPassword(scope.row)}>
+                      <i-bd-info class={'mr-4px'} />
+                      修改用户名密码
+                    </ElDropdownItem>
                   </ElDropdownMenu>
                 );
               }
@@ -240,8 +253,14 @@ const getUserList = () => {
   loadTable.value = true;
   userListGet(queryFrom).then((res: any) => {
     loadTable.value = false;
-    tableData.value = res.list;
+    // 先清空再 nextTick 赋值，强制 el-table 重新渲染：
+    // 否则当返回数据条数与原数据相同时，element-plus 按 index 复用 row 实例，
+    // 单元格内的 {{ scope.row.name }} 偶发不更新（修改昵称后必须 F5 才看到新值的根因）。
+    tableData.value = [];
     total.value = res.count;
+    nextTick(() => {
+      tableData.value = res.list || [];
+    });
   });
 };
 
@@ -342,6 +361,21 @@ const devicesUid = ref('');
 const onDevices = (item: any) => {
   devicesUid.value = item.uid;
   devicesValue.value = true;
+};
+
+// 修改账号密码
+const editPwdValue = ref(false);
+const editPwdUser = reactive({
+  uid: '',
+  username: '',
+  name: ''
+});
+
+const onEditPassword = (item: any) => {
+  editPwdUser.uid = item.uid;
+  editPwdUser.username = item.username || '';
+  editPwdUser.name = item.name || '';
+  editPwdValue.value = true;
 };
 
 // 初始化
