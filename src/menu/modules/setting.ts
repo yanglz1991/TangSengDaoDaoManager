@@ -55,6 +55,21 @@ const home: Menu.MenuOptions = {
         auth: ['superAdmin'],
         title: '加密通道管理'
       }
+    },
+    {
+      component: '/setting/mutesetting',
+      name: 'settingMuteSetting',
+      path: '/setting/mutesetting',
+      meta: {
+        icon: 'i-bd-info',
+        isAffix: false,
+        isFull: false,
+        isHide: false,
+        isKeepAlive: true,
+        isLink: '',
+        auth: ['superAdmin'],
+        title: '禁言设置'
+      }
     }
   ]
 };
