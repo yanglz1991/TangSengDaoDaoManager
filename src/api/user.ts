@@ -71,6 +71,60 @@ export function userUpdateNamePost(data: { uid: string; name: string }) {
   });
 }
 
+// IP 列表（含关联用户与黑名单状态）
+export function userIpListGet(params: any) {
+  return request({
+    url: '/manager/user/iplist',
+    method: 'get',
+    params
+  });
+}
+
+// 封禁 IP
+export function userIpBlacklistAddPost(data: { ip: string; reason?: string }) {
+  return request({
+    url: '/manager/user/ipblacklist/add',
+    method: 'post',
+    data
+  });
+}
+
+// 解禁 IP
+export function userIpBlacklistRemovePost(data: { ip: string }) {
+  return request({
+    url: '/manager/user/ipblacklist/remove',
+    method: 'post',
+    data
+  });
+}
+
+// 设备列表（含关联用户与黑名单状态）
+export function userDeviceListGet(params: any) {
+  return request({
+    url: '/manager/user/devicelist',
+    method: 'get',
+    params
+  });
+}
+
+// 封禁设备
+export function userDeviceBlacklistAddPost(data: { device_id: string; reason?: string }) {
+  return request({
+    url: '/manager/user/deviceblacklist/add',
+    method: 'post',
+    data
+  });
+}
+
+// 解禁设备
+export function userDeviceBlacklistRemovePost(data: { device_id: string }) {
+  return request({
+    url: '/manager/user/deviceblacklist/remove',
+    method: 'post',
+    data
+  });
+}
+
 // 管理员-列表
 export function adminList() {
   return request({

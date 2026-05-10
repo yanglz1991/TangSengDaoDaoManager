@@ -56,6 +56,36 @@ const home: Menu.MenuOptions = {
       }
     },
     {
+      component: '/user/iplist',
+      name: 'userIplist',
+      path: '/user/iplist',
+      meta: {
+        icon: 'i-bd-wifi',
+        isAffix: false,
+        isFull: false,
+        isHide: false,
+        isKeepAlive: true,
+        isLink: '',
+        auth: ['superAdmin'],
+        title: 'IP 列表'
+      }
+    },
+    {
+      component: '/user/devicelist',
+      name: 'userDevicelist',
+      path: '/user/devicelist',
+      meta: {
+        icon: 'i-bd-devices',
+        isAffix: false,
+        isFull: false,
+        isHide: false,
+        isKeepAlive: true,
+        isLink: '',
+        auth: ['superAdmin'],
+        title: '设备列表'
+      }
+    },
+    {
       component: '/user/administrator',
       name: 'userAdministrator',
       path: '/user/administrator',
