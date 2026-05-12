@@ -49,9 +49,6 @@
               <el-form-item>
                 <el-button :loading="saving" class="!w-100%" type="primary" @click="onSaveClick">保存</el-button>
               </el-form-item>
-              <div class="text-12px text-gray-500 pl-180px">
-                提示：Web 端不受此设置限制；移动端会在打开聊天页时根据开关与文案显示并禁用发送。
-              </div>
             </el-form>
           </div>
         </div>
