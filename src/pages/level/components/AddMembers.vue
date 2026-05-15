@@ -91,9 +91,10 @@ const onSubmit = async () => {
       若用户原本属于其它层级，会自动从原层级移出，解除原层级的默认好友，再加入本层级的默认好友。
     </p>
     <UserPicker
-      v-model="(uids as string[])"
+      :model-value="uids"
       multiple
       placeholder="搜索手机号 / 昵称 / uid，可多选"
+      @update:model-value="(v: any) => (uids = (Array.isArray(v) ? v : [v]) as string[])"
     />
     <div class="flex items-center mt-16px">
       <span class="text-14px mr-12px">加人/建群权限：</span>

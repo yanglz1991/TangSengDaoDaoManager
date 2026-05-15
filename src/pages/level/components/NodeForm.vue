@@ -149,10 +149,11 @@ const onSubmit = () => {
       </el-form-item>
       <el-form-item label="默认好友">
         <UserPicker
-          v-model="formData.default_friend_uids as string[]"
+          :model-value="formData.default_friend_uids || []"
           multiple
           :initial-map="friendNameMap"
           :exclude-uids="formData.owner_uid ? [formData.owner_uid] : []"
+          @update:model-value="(v: any) => (formData.default_friend_uids = (Array.isArray(v) ? v : [v]) as string[])"
           placeholder="可选；新用户注册后自动加这些人为好友"
         />
       </el-form-item>
