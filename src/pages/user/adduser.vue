@@ -31,6 +31,14 @@
             <el-form-item label="登录密码：">
               <el-input v-model="formData.password" type="password" show-password />
             </el-form-item>
+            <el-form-item label="加人/建群权限：">
+              <el-checkbox v-model="canInviteOrCreateGroup">
+                开启 - 允许该账号主动加好友 / 创建群聊
+              </el-checkbox>
+              <div class="text-gray-400 text-12px">
+                关闭：默认无加人 / 建群权限（与手机号注册的普通用户一致）
+              </div>
+            </el-form-item>
             <el-form-item>
               <el-button :loading="loginButLoading" class="!w-100%" type="primary" @click="onSaveClick">保存</el-button>
             </el-form-item>
@@ -58,12 +66,17 @@ const formData = reactive({
   phone: '',
   password: ''
 });
+// 是否允许「主动加好友/创建群聊」。默认关闭，与手机号注册的普通用户行为一致。
+const canInviteOrCreateGroup = ref(false);
 
 // 更新通用设置
 const loginButLoading = ref(false);
 const onSaveClick = () => {
   loginButLoading.value = true;
-  userAddPost(formData)
+  userAddPost({
+    ...formData,
+    can_invite_or_create_group: canInviteOrCreateGroup.value ? 1 : 0
+  })
     .then((_res: any) => {
       loginButLoading.value = false;
       ElMessage.success('添加成功');

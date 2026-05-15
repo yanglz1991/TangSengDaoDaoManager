@@ -82,13 +82,15 @@ meta:
 
 <script lang="tsx" setup>
 import { useRouter } from 'vue-router';
-import { ElButton, ElSpace, ElAvatar, ElDropdown, ElDropdownMenu, ElDropdownItem, ElMessage, ElMessageBox } from 'element-plus';
+import { ElButton, ElSpace, ElSwitch, ElAvatar, ElDropdown, ElDropdownMenu, ElDropdownItem, ElMessage, ElMessageBox } from 'element-plus';
 import Devices from '@/pages/message/components/Devices.vue';
 import EditPassword from '@/pages/user/components/EditPassword.vue';
 import { useUserStore } from '@/stores/modules/user';
 import { BU_DOU_CONFIG } from '@/config';
 // API 接口
 import { userListGet, userLiftbanPut } from '@/api/user';
+// 「加人/建群权限」单切换：复用 level 模块的 PUT /manager/level/user/permission
+import { levelUserPermissionPut } from '@/api/level';
 
 const router = useRouter();
 const userStore = useUserStore();
@@ -154,6 +156,34 @@ const column = reactive<Column.ColumnOptions[]>([
     width: 60,
     formatter(row: any) {
       return row.sex === 1 ? '男' : '女';
+    }
+  },
+  {
+    prop: 'can_invite_or_create_group',
+    label: '加人/建群权限',
+    width: 130,
+    align: 'center',
+    render: (scope: any) => {
+      const row = scope.row;
+      // 失败回滚：服务端返回 4xx 时 ElSwitch 视觉上自动跟随 model-value 不变（受控）。
+      const onChange = async (v: any) => {
+        const next = v ? 1 : 0;
+        const prev = row.can_invite_or_create_group;
+        row.can_invite_or_create_group = next; // 乐观更新
+        try {
+          await levelUserPermissionPut({ uid: row.uid, can_invite_or_create_group: next });
+          ElMessage.success(next === 1 ? '已开启加人/建群权限' : '已关闭加人/建群权限');
+        } catch (err: any) {
+          row.can_invite_or_create_group = prev; // 回滚
+          if (err?.status === 400) ElMessage.error(err.msg);
+        }
+      };
+      return (
+        <ElSwitch
+          model-value={row.can_invite_or_create_group === 1}
+          onChange={onChange}
+        />
+      );
     }
   },
   {

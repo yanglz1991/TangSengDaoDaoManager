@@ -9,6 +9,30 @@ export function userAddPost(data: any) {
   });
 }
 
+// 批量生成账户（手机号递增）
+//   start_phone: 起始手机号（11 位字符串）
+//   count: 生成数量（1-1000）
+//   zone: 区号，默认 0086
+//   password: 登录密码，留空则使用各账号自身手机号
+//   sex: 性别，0/1
+//   can_invite_or_create_group: 是否开启「加人/建群」权限 0/1
+export interface UserBatchAddReq {
+  start_phone: string;
+  count: number;
+  zone?: string;
+  password?: string;
+  sex?: number;
+  can_invite_or_create_group?: number;
+}
+
+export function userBatchAddPost(data: UserBatchAddReq) {
+  return request({
+    url: '/manager/user/batch_add',
+    method: 'post',
+    data
+  });
+}
+
 // 用户列表
 export function userListGet(params: any) {
   return request({

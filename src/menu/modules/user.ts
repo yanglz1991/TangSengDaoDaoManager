@@ -28,6 +28,21 @@ const home: Menu.MenuOptions = {
       }
     },
     {
+      component: '/user/batchadd',
+      name: 'userBatchadd',
+      path: '/user/batchadd',
+      meta: {
+        icon: 'i-bd-add-user',
+        isAffix: false,
+        isFull: false,
+        isHide: false,
+        isKeepAlive: true,
+        isLink: '',
+        auth: ['superAdmin'],
+        title: '批量生成账户'
+      }
+    },
+    {
       component: '/user/userlist',
       name: 'userUserlist',
       path: '/user/userlist',
