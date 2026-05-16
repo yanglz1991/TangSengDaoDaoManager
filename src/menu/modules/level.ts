@@ -9,7 +9,7 @@ const level: Menu.MenuOptions = {
     icon: 'i-bd-tree-diagram',
     isAffix: false,
     isFull: false,
-    isHide: true,
+    isHide: false,
     isKeepAlive: true,
     isLink: '',
     auth: ['superAdmin'],

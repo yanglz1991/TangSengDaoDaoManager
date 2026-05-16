@@ -28,13 +28,13 @@
                   <el-radio :label="0">关闭</el-radio>
                 </el-radio-group>
               </el-form-item>
-              <!-- <el-form-item label="系统账号加入群聊：">
+              <el-form-item label="系统账号加入群聊：">
                 <el-radio-group v-model="formData.invite_system_account_join_group_on">
                   <el-radio :label="1">开启</el-radio>
                   <el-radio :label="0">关闭</el-radio>
                 </el-radio-group>
               </el-form-item>
-              <el-form-item label="用户默认加入群聊：">
+              <!-- <el-form-item label="用户默认加入群聊：">
                 <el-radio-group v-model="formData.new_user_join_system_group">
                   <el-radio :label="1">加入</el-radio>
                   <el-radio :label="0">不加入</el-radio>

@@ -113,7 +113,7 @@ const column = reactive<Column.ColumnOptions[]>([
   {
     prop: 'username',
     label: '用户',
-    width: 120
+    width: 160
   },
   {
     prop: 'avatar',
@@ -132,11 +132,11 @@ const column = reactive<Column.ColumnOptions[]>([
       );
     }
   },
-  {
-    prop: 'uid',
-    label: '用户ID',
-    minWidth: 300
-  },
+  // {
+  //   prop: 'uid',
+  //   label: '用户ID',
+  //   minWidth: 300
+  // },
   {
     prop: 'status',
     label: '用户状态',
@@ -147,8 +147,8 @@ const column = reactive<Column.ColumnOptions[]>([
   },
   {
     prop: 'short_no',
-    label: '悟空号',
-    width: 180
+    label: 'QX号',
+    width: 120
   },
   {
     prop: 'sex',

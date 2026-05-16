@@ -107,7 +107,8 @@ const column = reactive([
   },
   {
     prop: 'short_no',
-    label: '悟空号'
+    label: 'QX号',
+    width: 170
   },
   {
     prop: 'sex',
@@ -125,7 +126,7 @@ const column = reactive([
   {
     prop: 'closure_time',
     label: '封禁日期',
-    width: 150
+    width: 170
   },
   {
     prop: 'operation',
