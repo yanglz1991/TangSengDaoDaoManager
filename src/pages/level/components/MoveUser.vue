@@ -102,7 +102,7 @@ const onSubmit = async () => {
     <p class="m-0 mb-12px text-14px text-#666">
       用户：<span class="font-600">{{ userName }}</span>
     </p>
-    <p class="m-0 mb-12px text-12px text-#999">移动后会自动解除原层级默认好友关系，并加入新层级默认好友为好友。</p>
+    <p class="m-0 mb-12px text-12px text-#999">移动后不会解除原层级默认好友关系，会加入新层级默认好友为好友。</p>
     <el-tree
       v-loading="loading"
       :data="treeData"
