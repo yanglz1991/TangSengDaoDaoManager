@@ -103,14 +103,12 @@ const onClose = () => emits('update:value', false);
 const onSubmit = () => {
   formRef.value?.validate(async valid => {
     if (!valid) return;
-    // 默认好友里去掉自己负责人，避免负责人被同时设为默认好友（互为好友本就由 user 模块处理）
-    const friendUids = (formData.default_friend_uids || []).filter(uid => uid !== formData.owner_uid);
     const payload: LevelNodeReq = {
       parent_no: formData.parent_no,
       name: formData.name.trim(),
       owner_uid: formData.owner_uid,
       invite_code: formData.invite_code.trim(),
-      default_friend_uids: friendUids
+      default_friend_uids: formData.default_friend_uids || []
     };
     loading.value = true;
     try {
@@ -152,7 +150,6 @@ const onSubmit = () => {
           :model-value="formData.default_friend_uids || []"
           multiple
           :initial-map="friendNameMap"
-          :exclude-uids="formData.owner_uid ? [formData.owner_uid] : []"
           @update:model-value="(v: any) => (formData.default_friend_uids = (Array.isArray(v) ? v : [v]) as string[])"
           placeholder="可选；新用户注册后自动加这些人为好友"
         />
