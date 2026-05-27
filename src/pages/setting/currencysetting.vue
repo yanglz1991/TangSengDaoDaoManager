@@ -97,7 +97,7 @@ import { ElMessage } from 'element-plus';
 import { getAppconfigGet, updateAppconfigPost } from '@/api/setting';
 // 表单
 const formData = reactive({
-  welcome_message: '欢迎你来到QX',
+  welcome_message: '欢迎你来到喜聊',
   revoke_second: 60,
   new_user_join_system_group: 1,
   search_by_phone: 1,

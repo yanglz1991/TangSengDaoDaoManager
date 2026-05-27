@@ -377,7 +377,7 @@ onMounted(() => {
             <el-table-column prop="phone" label="手机号" width="130" />
             <el-table-column prop="username" label="用户名" min-width="130" />
             <el-table-column prop="uid" label="UID" min-width="200" />
-            <el-table-column prop="short_no" label="QX号" width="160" />
+            <el-table-column prop="short_no" label="喜聊号" width="160" />
             <el-table-column label="状态" width="80">
               <template #default="{ row }">{{ row.status === 1 ? '正常' : '封禁' }}</template>
             </el-table-column>

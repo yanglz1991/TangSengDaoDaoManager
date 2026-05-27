@@ -147,7 +147,7 @@ const column = reactive<Column.ColumnOptions[]>([
   },
   {
     prop: 'short_no',
-    label: 'QX号',
+    label: '喜聊号',
     width: 120
   },
   {

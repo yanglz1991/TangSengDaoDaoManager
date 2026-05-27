@@ -1,6 +1,6 @@
 <template>
   <div class="footer flex-center">
-    <a  target="_blank"> 2026 © QX. </a>
+    <a  target="_blank"> 2026 © 喜聊. </a>
   </div>
 </template>
 
