@@ -1,8 +1,8 @@
-# 喜聊后台管理
+# 禧语后台管理
 
 ### 介绍 📖
 
-喜聊后台管理一款基于 Vue3.3、TypeScript、Vite5、Pinia、Element-Plus 的后台管理框架，使用目前最新技术栈开发；是喜聊业务管理后台。
+禧语后台管理一款基于 Vue3.3、TypeScript、Vite5、Pinia、Element-Plus 的后台管理框架，使用目前最新技术栈开发；是禧语业务管理后台。
 
 - 使用 Vue3.3 + TypeScript 开发，单文件组件＜script setup＞
 - 采用 Vite 作为项目开发、打包工具（配置 gzip/brotli 打包、tsx 语法、跨域代理…）

@@ -107,7 +107,7 @@ const column = reactive([
   },
   {
     prop: 'short_no',
-    label: '喜聊号'
+    label: '禧语号'
   },
   {
     prop: 'sex',

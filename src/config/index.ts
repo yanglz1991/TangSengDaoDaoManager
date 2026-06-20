@@ -22,8 +22,8 @@ Object.keys(moduleFiles).forEach(name => {
 const TSDD_CONFIG = window.TSDD_CONFIG ? window.TSDD_CONFIG : {};
 // 默认应用配置
 export const BU_DOU_CONFIG = {
-  APP_TITLE: '喜聊后台管理',
-  APP_TITLE_SHORT: '喜聊',
+  APP_TITLE: '禧语后台管理',
+  APP_TITLE_SHORT: '禧语',
   ...modules[process.env.APP_ENV as any],
   ...TSDD_CONFIG
   // APP_URL: '/api/v1/' // 正式环境地址 (通用打包镜像，用此相对地址)

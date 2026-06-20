@@ -38,7 +38,7 @@ const getPlugins = (_command?: string) => {
     createHtmlPlugin({
       inject: {
         data: {
-          title: '喜聊后台管理',
+          title: '禧语后台管理',
           injectScript: process.env.IS_CONFIG ? `<script src="/tsdd-config.js"></script>` : null
         }
       }
