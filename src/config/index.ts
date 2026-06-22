@@ -8,7 +8,7 @@ export const LOGIN_URL = '/login';
 export const DEFAULT_PRIMARY = '#E4633B';
 
 // 路由白名单地址（必须是本地存在的路由 staticRouter.ts 中）
-export const ROUTER_WHITE_LIST: string[] = ['/login'];
+export const ROUTER_WHITE_LIST: string[] = ['/login', '/download'];
 
 // 自定义应用根据运行环境获取配置
 const modules: any = {};

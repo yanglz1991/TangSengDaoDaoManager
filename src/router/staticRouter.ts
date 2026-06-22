@@ -16,5 +16,13 @@ export const staticRouter: RouteRecordRaw[] = [
     meta: {
       title: '登录'
     }
+  },
+  {
+    path: '/download',
+    name: 'download',
+    component: () => import('@/pages/download/index.vue'),
+    meta: {
+      title: '应用下载'
+    }
   }
 ];
