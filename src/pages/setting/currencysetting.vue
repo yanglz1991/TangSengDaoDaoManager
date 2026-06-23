@@ -62,6 +62,12 @@
                   <el-radio :label="0">关闭</el-radio>
                 </el-radio-group>
               </el-form-item>
+              <el-form-item label="短信验证码：">
+                <el-radio-group v-model="formData.sms_verify_on">
+                  <el-radio :label="1">开启</el-radio>
+                  <el-radio :label="0">关闭</el-radio>
+                </el-radio-group>
+              </el-form-item>
               <template v-if="formData.send_welcome_message_on === 1">
                 <el-form-item label="登录欢迎语：">
                   <el-input
@@ -104,7 +110,8 @@ const formData = reactive({
   send_welcome_message_on: 1,
   register_invite_on: 1,
   invite_system_account_join_group_on: 1,
-  register_user_must_complete_info_on: 0
+  register_user_must_complete_info_on: 0,
+  sms_verify_on: 1
 });
 //  初始化数据
 const initData = () => {
@@ -117,6 +124,7 @@ const initData = () => {
     formData.register_invite_on = res.register_invite_on;
     formData.invite_system_account_join_group_on = res.invite_system_account_join_group_on;
     formData.register_user_must_complete_info_on = res.register_user_must_complete_info_on;
+    formData.sms_verify_on = res.sms_verify_on;
   });
 };
 

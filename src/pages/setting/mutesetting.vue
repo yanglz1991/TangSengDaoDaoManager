@@ -83,6 +83,7 @@ interface IForm {
   register_user_must_complete_info_on?: number;
   channel_pinned_message_max_count?: number;
   can_modify_api_url?: number;
+  sms_verify_on?: number;
 }
 
 const formData = reactive<IForm>({
@@ -111,6 +112,7 @@ const initData = () => {
     formData.register_user_must_complete_info_on = res.register_user_must_complete_info_on;
     formData.channel_pinned_message_max_count = res.channel_pinned_message_max_count;
     formData.can_modify_api_url = res.can_modify_api_url;
+    formData.sms_verify_on = res.sms_verify_on;
   });
 };
 
