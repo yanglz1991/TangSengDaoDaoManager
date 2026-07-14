@@ -26,6 +26,20 @@ const home: Menu.MenuOptions = {
         isLink: '',
         title: 'APP升级'
       }
+    },
+    {
+      component: '/tool/notify',
+      name: 'toolNotify',
+      path: '/tool/notify',
+      meta: {
+        icon: 'i-bd-info',
+        isAffix: false,
+        isFull: false,
+        isHide: false,
+        isKeepAlive: true,
+        isLink: '',
+        title: '下发通知'
+      }
     }
   ]
 };
