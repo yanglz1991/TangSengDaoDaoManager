@@ -17,3 +17,11 @@ export function commonAppversionPost(data: any) {
     data
   });
 }
+
+// 删除App版本
+export function commonAppversionDelete(id: number) {
+  return request({
+    url: `/common/appversion/${id}`,
+    method: 'delete'
+  });
+}

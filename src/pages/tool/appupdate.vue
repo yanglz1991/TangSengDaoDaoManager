@@ -62,9 +62,9 @@ meta:
 </route>
 
 <script lang="tsx" setup>
-import { ElButton } from 'element-plus';
+import { ElButton, ElSpace, ElMessage, ElMessageBox } from 'element-plus';
 // API 接口
-import { commonAppversionListGet } from '@/api/tool';
+import { commonAppversionListGet, commonAppversionDelete } from '@/api/tool';
 /**
  * 表格
  */
@@ -95,6 +95,22 @@ const column = reactive<Column.ColumnOptions[]>([
     prop: 'created_at',
     label: '发布时间',
     width: 170
+  },
+  {
+    prop: 'operation',
+    label: '操作',
+    align: 'center',
+    fixed: 'right',
+    width: 100,
+    render: (scope: any) => {
+      return (
+        <ElSpace>
+          <ElButton type="danger" onClick={() => onDel(scope.row)}>
+            删除
+          </ElButton>
+        </ElSpace>
+      );
+    }
   }
 ]);
 const tableData = ref<any[]>([]);
@@ -137,6 +153,27 @@ const onAppVersionAdd = () => {
 // 新增成功
 const onAppVersionOk = () => {
   getTableList();
+};
+
+// 删除版本
+const onDel = (item: any) => {
+  ElMessageBox.confirm(`确定要删除版本 ${item.app_version} 吗？`, '删除版本', {
+    confirmButtonText: '确定',
+    cancelButtonText: '取消',
+    closeOnClickModal: false,
+    type: 'warning'
+  })
+    .then(() => {
+      commonAppversionDelete(item.id).then((res: any) => {
+        if (res.status == 200) {
+          getTableList();
+          ElMessage.success('删除成功！');
+        }
+      });
+    })
+    .catch(() => {
+      ElMessage.info('取消删除');
+    });
 };
 // 初始化
 onMounted(() => {
